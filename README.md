@@ -5,14 +5,14 @@
 AutCloud는 초기 단계 스타트업이 별도의 인프라 엔지니어 없이도 최적의 클라우드 인프라를 설계하고 운영할 수 있도록 돕는 SaaS 플랫폼입니다.
 Multi-cloud 환경을 지원하며, 비용 효율적인 클라우드 리소스 배분을 자동화하여 서버 장애 리스크를 최소화하는 솔루션을 제공합니다.
 
-## **👨‍💻 팀원 소개**  
+## **👨‍💻 팀원 소개**
 
 <table width="100%" border="1">
   <tr>
     <td align="center" width="25%"><img src="https://github.com/user-attachments/assets/6d254705-d8b2-442b-a6a1-c73deb52c79d" width="150" height="200"/></td>
     <td align="center" width="25%"><img src="https://github.com/user-attachments/assets/e70ccf49-9f50-4dba-8366-27bdc1166621" width="150" height="200"/></td>
     <td align="center" width="25%"><img src="https://github.com/user-attachments/assets/4dafc97b-c0e3-42bd-bf85-5ad0edbb21fc" width="150" height="200"/></td>
-    <td align="center" width="25%"><img src="https://github.com/user-attachments/assets/bddaa386-3e1b-4314-bee1-97c26b2ac239" width="150" height="200"/></td>
+    <td align="center" width="25%"><img src="https://github.com/user-attachments/assets/a8fe8895-d761-40ea-90e4-5bc7ff6dc1b9" width="150" height="200"/></td>
   </tr>
   <tr>
     <td align="center"><b>고승우</b><br>(소프트웨어학부 / 4학년 / 팀장)</td>
