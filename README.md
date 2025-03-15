@@ -87,3 +87,47 @@ Multi-cloud 환경을 지원하며, 비용 효율적인 클라우드 리소스 �
 ## ✅ 스타트업 친화적 가격 정책
 - 초기 스타트업이 부담 없이 사용할 수 있도록 구독 기반 요금제 적용
 - 클라우드 벤더별 가격 비교 기능으로 비용 절감 유도
+
+<br><br/>
+# 🛠 Project Setup Guide
+
+## 🔗 Setting Up Submodules (Fetching BE & FE Repositories)
+This project uses Git Submodule to manage BE (Backend) and FE (Frontend) as separate repositories.
+
+### 1. Cloning the Project (First Time)
+
+```bash
+git clone --recursive <MAIN_REPO_URL>
+```
+
+Using `--recursive` will ensure that submodules are cloned automatically.
+
+### 2. Updating Submodules
+If there are updates in the submodules, pull the latest changes using:
+
+```bash
+git submodule update --recursive --remote
+```
+<br><br/>
+## 🐳 Using Docker
+This project uses Docker and Docker Compose to manage the backend, frontend, and database environments.
+
+### 1. Create `.env` File (First Time)
+Before running the project, create a .env file and add the following:
+```text
+POSTGRES_USER=something
+POSTGRES_PASSWORD=something
+POSTGRES_DB=something
+```
+
+### 2. Running Docker Containers
+Use the following command to start backend, frontend, and database containers in background:
+```bash
+docker compose up -d
+```
+
+### 3. Terminate Containers
+use the following command to terminate containers including volume:
+```bash
+docker compose down -v
+```
