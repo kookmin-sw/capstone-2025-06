@@ -115,9 +115,9 @@ This project uses Docker and Docker Compose to manage the backend, frontend, and
 ### 1. Create `.env` File (First Time)
 Before running the project, create a .env file and add the following:
 ```text
-POSTGRES_USER=something
-POSTGRES_PASSWORD=something
-POSTGRES_DB=something
+DB_USER=something
+DB_PASSWORD=something
+DB_NAME=something
 ```
 
 ### 2. Running Docker Containers
