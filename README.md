@@ -102,7 +102,14 @@ git clone --recursive <MAIN_REPO_URL>
 
 Using `--recursive` will ensure that submodules are cloned automatically.
 
-### 2. Updating Submodules
+### 2. Init Submodules
+Init Submodule before update submodules
+
+```bash
+git submodule init
+```
+
+### 3. Updating Submodules
 If there are updates in the submodules, pull the latest changes using:
 
 ```bash
