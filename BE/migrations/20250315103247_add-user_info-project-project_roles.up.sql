@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS account_user(
     id UUID PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
+    phone_num VARCHAR(255) NOT NULL,
     verified boolean NOT NULL DEFAULT 'false',
     create_dt TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
