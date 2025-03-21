@@ -4,3 +4,6 @@
 [submodule "FE"]
 	path = FE
 	url = https://github.com/jisuzzzz/autcloud_fe
+[submodule "AI"]
+	path = AI
+	url = https://github.com/Hyobin01/autcloud_ai
