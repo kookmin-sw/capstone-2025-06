@@ -1,0 +1,12 @@
+[submodule "command_server"]
+	path = command_server
+	url = https://github.com/jollidah/autcloud-backend.git
+[submodule "client_server"]
+	path = client_server
+	url = https://github.com/jisuzzzz/autcloud_fe
+[submodule "architector_server"]
+	path = architector_server
+	url = https://github.com/Hyobin01/autcloud_ai.git
+[submodule "deploy_manager"]
+	path = deploy_manager
+	url = https://github.com/jollidah/autcloud_gitops.git
