@@ -8,10 +8,11 @@ COPY . .
 # Before running this, make sure sqlx-data.json exists!
 RUN cargo build --release --target x86_64-unknown-linux-musl
 
-# stage for web binary 
-FROM alpine:latest AS web
+# stage for backend binary 
+FROM alpine:latest AS BE
 COPY --from=builder /src/migrations /migrations
-# COPY --from=builder /src/target/x86_64-unknown-linux-musl/release/web /web
+
+# COPY --from=builder /src/target/x86_64-unknown-linux-musl/release/BE /BE
 ENV SQLX_OFFLINE=true 
 CMD [ "/BE" ]
 EXPOSE 80
