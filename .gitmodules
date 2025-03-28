@@ -4,9 +4,9 @@
 [submodule "client_server"]
 	path = client_server
 	url = https://github.com/jisuzzzz/autcloud_fe
-[submodule "architector_server"]
-	path = architector_server
-	url = https://github.com/Hyobin01/autcloud_ai.git
 [submodule "deploy_manager"]
 	path = deploy_manager
 	url = https://github.com/jollidah/autcloud_gitops.git
+[submodule "architector_server"]
+	path = architector_server
+	url = https://github.com/jollidah/architector_server.git
