@@ -1,4 +1,4 @@
-![Architecture](https://github.com/user-attachments/assets/67755042-b925-4750-bee1-072578beb7db)# ☁️ AutCloud: Cloud 설계 SaaS 플랫폼
+☁️ AutCloud: Cloud 설계 SaaS 플랫폼
 
 **클라우드 인프라 설계, 어렵지 않게**  
 AutCloud는 복잡한 클라우드 인프라 구성을 시각화 기반으로 쉽게 설계하고, 실시간 협업 및 AI 추천을 통해 효율적인 인프라 설계를 지원하는 SaaS 플랫폼입니다.
@@ -162,14 +162,11 @@ AutCloud는 복잡한 클라우드 인프라 구성을 시각화 기반으로 �
 
 <br/>
 
-## 🧭 시스템 아키텍처
-
 ### 🧱 전체 시스템 구성도
 ![Architecture](https://github.com/user-attachments/assets/29e5f54e-c047-460f-8a84-705108b7439a)
 
-### 🧠 AI 아키텍처
-
-<img src="https://github.com/user-attachments/assets/your-image-id" alt="AI 아키텍처" width="100%"/>
+### 🧠 Model Server 
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/832d4417-d794-4e0c-bced-94647d6c85f3" />
 
 <br/>
 
