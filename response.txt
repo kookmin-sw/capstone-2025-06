@@ -1,0 +1,116 @@
+{
+    "temp_id": String,
+    "resource_type": ResourceType,
+    "position": {
+        "y": i64,
+        "x": i64
+    },
+    "attributes": {
+        ...
+    },
+}
+
+enum ResourceType {
+    BlockStorage,
+    Compute,
+    ManagedDatabase,
+    ObjectStorage,
+    FirewallGroup,
+    FirewallRule,
+}
+
+{
+    "temp_id": "block_storage_1", // naming convention은 FE에 맞춰서
+    "resource_type": "block_storage",
+    "position": {
+        "y": 0,
+        "x": 0,
+    },
+    "attributes": {    
+        "region": "ewr",
+        "id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
+        mount_id: String,
+        attached_to_instance: Uuid,
+        size_gb: i64,
+        label: String,
+    },
+}
+
+BlockStorage {
+    region: String, // e.g."ewr"
+    id: Uuid,
+    mount_id: String,
+    attached_to_instance: Uuid,
+    size_gb: i64,
+    label: String,
+}
+
+FirewallGroup {
+    id: Uuid,
+    description: String,
+}
+
+FirewallRule {
+    id: i64,
+    action: String,
+    port: String,
+    ip_type: IpType,
+    protocol: Protocol,
+    subnet: String,
+    subnet_size: i64,
+    notes: String,
+}
+enum IpType {
+    v4,
+    v6,
+}
+enum Protocol {
+    icmp,
+    tcp,
+    udp,
+    gre,
+    esp,
+    ah,
+}
+
+Compute {
+    region: String,
+    auto_backups: BackupStatus,
+    id: Uuid,
+    plan: String,
+    status: String,
+    main_ip: String,
+    label: String,
+    os_id: i64,
+    firewall_group_id: String,
+}
+enum BackupStatus {
+    enabled,
+    disabled,
+}
+ManagedDatabase {
+    region: String, // e.g. "ewr"
+    id: Uuid,
+    status: String,
+    plan: String,
+    database_engine: DatabaseEngine,
+    database_engine_version: i64,
+    latest_backup: String,
+    label: String,
+}
+enum DatabaseEngine {
+    mysql,
+    pg,
+}
+ObjectStorage {
+    tier_id: i64,
+    id: Uuid,
+    cluster_id: i64,
+    label: String,
+}
+
+ObjectPosition {
+    x: i64,
+    y: i64,
+}
+

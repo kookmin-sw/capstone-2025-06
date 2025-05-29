@@ -1,0 +1,230 @@
+아래왜 같은 형식으로 오면 좋을 것 같아요 position 정보는 create, update 커맨드 시에만 추출할게요
+{
+    "command_list": [
+        {
+            "command_name": "CreateCompute",
+            "temp_id": "compute_1",
+            "position": {
+                "y": 20,
+                "x": 20
+            },
+            "data": {
+                "id": "temp1"
+            }
+        },
+        {
+            "command_name": "UpdateCompute",
+            "temp_id": "",
+            "position": {
+                "y": 20,
+                "x": 20
+            },
+            "data": {
+                "id": "compute_1"
+            }
+        },
+        {
+            "command_name": "DeleteCompute",
+            "temp_id": "",
+            "position": {
+                "y": 20,
+                "x": 20
+            },
+            "data": {
+                "id": "compute_1"
+            }
+        },
+    ]
+} 
+
+2안 -> 이거 가능?: 지수님께 알아서 temp_id에 int만 넣어줄 수 있는지 여쭤보고 결정
+{
+    "command_list": [
+        {
+            "command_name": "CreateCompute",
+            "temp_id": "",
+            "position": {
+                "y": 20,
+                "x": 20
+            },
+            "data": {
+                "id": "temp1"
+            }
+        },
+    ]
+}
+
+command_name: CreateCompute
+data: {
+    region: String,
+    plan: String,
+    label: String,
+    os_id: i64,
+    backups: BackupStatus,
+    hostname: String,
+}
+
+enum BackupStatus{
+    enabled,
+    disabled
+}
+-------------------------------------------------------------------
+
+command_name: UpdateCompute
+data: {
+    id: Uuid,
+    backups: BackupStatus,
+    firewall_group_id: String,
+    os_id: i64,
+    plan: String,
+    ddos_protection: bool,
+    label: String
+}
+-------------------------------------------------------------------
+
+command_name: DeleteCompute
+data: {
+    id: Uuid
+}
+-------------------------------------------------------------------
+
+command_name: CreateBlockStorage
+data: {
+    region: String,
+    size_gb: i64, // New size of the Block Storage in GB. Size may range between 10 and 40000 depending on the block_type
+    label: String
+}
+-------------------------------------------------------------------
+
+command_name: UpdateBlockStorage
+data: {
+    id: Uuid,
+    size_gb: i64, // New size of the Block Storage in GB. Size may range between 10 and 40000 depending on the block_type
+    label: String
+}
+-------------------------------------------------------------------
+
+command_name: DeleteBlockStorage
+data: {
+    id: Uuid
+}
+-------------------------------------------------------------------
+
+command_name: AttachBlockStorageToCompute 
+data: {
+    id: Uuid,
+    instance_id: Uuid,
+    live: bool // true: do not restart the instance
+}
+-------------------------------------------------------------------
+
+command_name: DetachBlockStorageFromCompute 
+data: {
+    id: Uuid,
+    live: bool // true: do not restart the instance
+}
+-------------------------------------------------------------------
+
+command_name: CreateFirewallGroup
+data: {
+    description: String
+}
+-------------------------------------------------------------------
+
+command_name: UpdateFirewallGroup
+data: {
+    id: Uuid,
+    description: String
+}
+-------------------------------------------------------------------
+
+command_name: DeleteFirewallGroup
+data: {
+    id: Uuid
+}
+-------------------------------------------------------------------
+
+command_name: CreateFirewallRule
+data: {
+    firewall_group_id: Uuid,
+    ip_type: IpType,
+    protocol: Protocol,
+    port: String,
+    subnet: String,     // e.g. "192.0.2.0"
+    subnet_size: i64,
+    notes: String,
+}
+
+enum IpType {
+    v4,
+    v6,
+}
+
+enum Protocol {
+    icmp,
+    tcp,
+    udp,
+    gre,
+    esp,
+    ah
+}
+-------------------------------------------------------------------
+
+command_name: DeleteFirewallRule
+data: {
+    firewall_group_id: Uuid,
+    firewall_rule_id: i64,
+}
+-------------------------------------------------------------------
+
+command_name: CreateManagedDatabase
+data: {
+    database_engine: DatabaseEngine,
+    database_engine_version: i64,
+    region: String,
+    plan: String,
+    label: String,
+}
+enum DatabaseEngine {
+    mysql,
+    pg
+}
+
+The version of the chosen database engine type for the Managed Database.
+MySQL: 8
+PostgreSQL: 16
+-------------------------------------------------------------------
+
+command_name: UpdateManagedDatabase
+data: {
+    id: Uuid,
+    plan: String,
+    label: String
+}
+-------------------------------------------------------------------
+
+command_name: DeleteManagedDatabase
+data: {
+    id: Uuid
+}
+-------------------------------------------------------------------
+
+command_name: CreateObjectStorage
+data: {
+    cluster_id: i64,
+    tier_id: i64,
+    label: String,
+}
+-------------------------------------------------------------------
+
+command_name: UpdateObjectStorage
+data: {
+    id: Uuid,
+    label: String,
+}
+-------------------------------------------------------------------
+
+command_name: DeleteObjectStorage
+data: {
+    id: Uuid
+}
